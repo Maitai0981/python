@@ -1,0 +1,7 @@
+num = float(input("digite a no do aluno no primeiro bimestre: "))
+num2 = float(input("digite a no do aluno no segundo bimestre: "))
+num3 = float(input("digite a no do aluno no terceiro bimestre: "))
+num4 = float(input("digite a no do aluno no quarto bimestre: "))
+var = (num+num2+num3+num4)
+ver = (round(var/4,1))
+print("a media é igual a",ver)

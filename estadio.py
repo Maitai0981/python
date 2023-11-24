@@ -1,0 +1,5 @@
+a= int(input("digite quntos ingressos foram vendidos da classe A: "))
+b= int(input("digite quntos ingressos foram vendidos da classe B: "))
+c= int(input("digite quntos ingressos foram vendidos da classe C: "))
+t = (a*50)+(b*30)+(c*20)
+print("a renda foi igual a: R$",t)

@@ -1,0 +1,40 @@
+import random
+
+def generate_question():
+    """Gera uma pergunta aleatória de matemática em inglês."""
+    num1 = random.randint(1, 10)
+    num2 = random.randint(1, 10)
+    operator = random.choice(['+', '-', '*', '/'])
+
+    # Garante que a divisão seja sempre uma divisão inteira válida
+    if operator == '/' and num1 % num2 != 0:
+        num1 = num2 * random.randint(1, 5)
+
+    question = f"What is {num1} {operator} {num2}? "
+    return question, eval(str(num1) + operator + str(num2))
+
+def main():
+    print("Welcome to the English Math Quiz!")
+    score = 0
+    num_questions = 5
+
+    for _ in range(num_questions):
+        question, answer = generate_question()
+        user_answer = input(question)
+
+        try:
+            user_answer = float(user_answer)
+        except ValueError:
+            print("Invalid input. Please enter a number.")
+            continue
+
+        if user_answer == answer:
+            print("Correct!")
+            score += 1
+        else:
+            print(f"Wrong! The correct answer is {answer}.")
+
+    print(f"Quiz complete! You scored {score}/{num_questions}.")
+
+if __name__ == "__main__":
+    main()

@@ -1,0 +1,7 @@
+binario = input("Indique um número binário: ")
+
+if not all(bit in '01' for bit in binario):
+    print("Entrada inválida. Insira apenas números binários (0 e 1).")
+else:
+    decimal = int(binario[:8], 2)
+    print("O número decimal equivalente é:", decimal)
